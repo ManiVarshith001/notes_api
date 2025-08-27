@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import RedirectResponse
 
 app = FastAPI()
 from fastapi.middleware.cors import CORSMiddleware
@@ -35,6 +36,12 @@ def delete_note(note_id: int):
         raise HTTPException(status_code=404, detail="Note not found")
     del notes[note_id]
     return {"message": "Note deleted"}
+
+
+
+@app.get("/")
+def root():
+    return RedirectResponse(url="/docs")
 
 
 
