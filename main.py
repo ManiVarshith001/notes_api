@@ -36,8 +36,6 @@ def delete_note(note_id: int):
     del notes[note_id]
     return {"message": "Note deleted"}
 
-@app.get("/")
-def read_root():
-    return {"message": "FastAPI is working on Vercel 🚀"}
+
 
 
