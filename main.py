@@ -5,20 +5,6 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-# Allow your local React dev server + your future Vercel URL
-origins = [
-    "http://localhost:5173",            # Vite dev server
-    "https://your-frontend.vercel.app", # replace later after deploy
-]
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
 
 # Fake in-memory DB
 notes = {}
